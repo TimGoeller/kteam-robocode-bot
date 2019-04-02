@@ -174,6 +174,7 @@ public class KTeamRobot extends AdvancedRobot {
             if(costSum < lowestCostSum) {
                 lowestCostSum = costSum;
                 lowestCostSumPoints = new ArrayList<>();
+                lowestCostSumPoints.add(position);
             }
             else if(costSum == lowestCostSum) {
                 lowestCostSumPoints.add(position);
@@ -181,6 +182,7 @@ public class KTeamRobot extends AdvancedRobot {
         }
 
         lastLowestCrossingDangerPointsDebug = lowestCostSumPoints;
+
         return lowestCostSumPoints.get((int)(Math.random() * (lowestCostSumPoints.size() - 1)));
     }
 
